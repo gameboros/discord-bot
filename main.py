@@ -15,7 +15,7 @@ voice_client = ''
 #2733784431680
 intents=discord.Intents.all()
 client = discord.Client(intents=intents)
-
+#test
 @client.event
 async def on_ready():
   print('{0.user} está online'.format(client))
