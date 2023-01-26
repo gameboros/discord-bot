@@ -23,12 +23,12 @@ async def on_ready():
 @client.event
 async def on_message(message):
   print(message.content)
-  if message.content == 'ben':
+  if message.content == 'message you wanna match':
     # Get the audio file name from the message
         #audio_file = message.content[5:]
 
     # Search for the audio file on YouTube
-    video = pafy.new(f"https://www.youtube.com/watch?v=7qKlU2a9-Zg&ab_channel=MemeSoundEffects")
+    video = pafy.new(f"video url you wanna play")
     bestaudio = video.getbestaudio()
 
     voice_client = discord.utils.get(client.voice_clients)
@@ -40,7 +40,7 @@ async def on_message(message):
       voice_client = await voice_channel.connect()
       
     if voice_client:
-      voice_client.play(discord.FFmpegOpusAudio(executable = 'C:/Users/darku/temp/projetos/bot/ffmpeg-2023-01-09-git-13d04e30d7-full_build/bin/ffmpeg' , source=bestaudio.url))
+      voice_client.play(discord.FFmpegOpusAudio(executable = 'your ffmpeg address' , source=bestaudio.url))
 
 def sendtxt(name: str): #le os caules(txts da pasta)
   file1 = open('txts/'+name+'.txt', 'r')
